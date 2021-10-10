@@ -27,9 +27,9 @@ fun determineWinner(computerChoice: String, userChoice: String?){
     val loseMessage = "You've lost"
 
     when(computerChoice){
-        "rock" -> if (userChoice == "paper") printIn(winMessage) elseprintIn(loseMessage)
-        "paper" -> if (userChoice == "scissors") printIn(winMessage) elseprintIn(loseMessage)
-        "scissors" -> if (userChoice == "rock") printIn(winMessage) elseprintIn(loseMessage)
+        "rock" -> if (userChoice == "paper") printIn(winMessage) else printIn(loseMessage)
+        "paper" -> if (userChoice == "scissors") printIn(winMessage) else printIn(loseMessage)
+        "scissors" -> if (userChoice == "rock") printIn(winMessage) else printIn(loseMessage)
     }
 
 
