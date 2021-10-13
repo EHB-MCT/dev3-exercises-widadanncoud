@@ -3,6 +3,7 @@ fun main() {
     challengeOne()
     challengeTwo()
     challengeThree()
+    challengeFour()
 }
 
 
@@ -42,6 +43,7 @@ fun challengeTwo(){
                 println("loser")
             }
         }
+    challengeThree()
 }
 
 fun challengeThree() {
@@ -60,6 +62,7 @@ fun challengeThree() {
     val userResponse = readLine()
     if (rightAnswer.contains(userResponse)) {
         println("winner")
+        challengeFour()
     } else if (goBack.contains(userResponse)){
         println("go to previous challenge")
         challengeTwo()
@@ -67,6 +70,10 @@ fun challengeThree() {
         println("game over")
         challengeOne()
     }
+}
+
+fun challengeFour(){
+
 }
 
 
