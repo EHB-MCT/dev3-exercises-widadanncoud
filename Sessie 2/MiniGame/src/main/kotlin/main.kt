@@ -44,28 +44,29 @@ fun challengeTwo(){
         }
 }
 
-fun challengeThree(){
-    println("Rick often erases Morty's memory. Why did Morty get mad when he discovered the signification of the color " +
-            "of the erased memories?")
+fun challengeThree() {
+    println(
+        "Rick often erases Morty's memory. Why did Morty get mad when he discovered the signification of the color " +
+                "of the erased memories?"
+    )
 
     println("1 : He felt betrayed.")
     println("2 : Rick hit him in his face because he broke one of the memories.")
     println("3 : Rick erases Morty's memory when Rick himself does something stupid.")
 
-    val rightAnswer = "3";
+    val rightAnswer = arrayOf("three", "3", "drie");
+    val goBack = arrayOf("twoo", "2", "twee");
 
     val userResponse = readLine()
-    if (rightAnswer.contains(userResponse)){
+    if (rightAnswer.contains(userResponse)) {
         println("winner")
-    }else if (
+    } else if (goBack.contains(userResponse)){
         println("go to previous challenge")
         challengeTwo()
-    )else{
+    } else {
         println("game over")
         challengeOne()
     }
-
-
 }
 
 
