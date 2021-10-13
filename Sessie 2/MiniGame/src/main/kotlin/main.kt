@@ -2,6 +2,7 @@ fun main() {
     println("You will be playing some games about Rick and Morty.")
     challengeOne()
     challengeTwo()
+    challengeThree()
 }
 
 
@@ -41,6 +42,28 @@ fun challengeTwo(){
                 println("loser")
             }
         }
+}
+
+fun challengeThree(){
+    println("Rick often erases Morty's memory. Why did Morty get mad when he discovered the signification of the color " +
+            "of the erased memories?")
+
+    println("1 : He felt betrayed.")
+    println("2 : Rick hit him in his face because he broke one of the memories.")
+    println("3 : Rick erases Morty's memory when Rick himself does something stupid.")
+
+    val rightAnswer = "3";
+
+    val userResponse = readLine()
+    if (rightAnswer.contains(userResponse)){
+        println("winner")
+    }else if (
+        println("go to previous challenge")
+        challengeTwo()
+    )else{
+        println("game over")
+        challengeOne()
+    }
 
 
 }
