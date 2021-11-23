@@ -1,0 +1,58 @@
+1)   
+SELECT productName from products WHERE productCode = "S24_3856"
+1956 Porsche 356A Coupe
+
+2)   
+SELECT AVG (buyPrice) from products
+54.395182
+
+
+3)   
+SELECT COUNT('fort') FROM products
+WHERE productName LIKE '%Ford%' 
+15
+
+4)   
+SELECT MAX(buyPrice) FROM products
+103.42
+
+5)   
+SELECT COUNT('ships') FROM products
+110
+
+2.1)
+SELECT COUNT('customerNumer') FROM orders
+WHERE customerNumber = "328" 
+3
+
+2.2)
+SELECT COUNT(*) FROM orders
+INNER JOIN customers ON customers.customerNumber = orders.customerNumber
+WHERE customers.contactFirstName = "Julie" AND customers.contactLastName = "Young"
+3 
+
+2.3)
+SELECT COUNT(*) FROM customers
+WHERE creditLimit = 0 AND customers.country = "USA"
+1
+
+2.4)
+SELECT customers.customerName, AVG(amount) AS average from payments
+INNER join customers ON customers.customerNumber = payments.customerNumber
+GROUP BY customers.customerNumber
+ORDER BY average DESC
+limit 1
+Collectable Mini Designs Co.
+
+Stap 1: SELECT * FROM payments 
+stap 2: SELECT AVG(amount) FROM payments //gemiddelde 
+stap 3: SELECT AVG(amount) FROM payments
+            Inner join cu on cuss.cusNumber = payments.cusNumber 
+Stap 4: SELECT AVG(amount), customers.customerName FROM payments
+            Inner join customer on customers.customerNumber = payments.customerNumber// dit gaat niet —>
+stap 5:SELECT AVG(amount), customers.customerName FROM payments
+            Inner join cu on customers.customerNumber = payments.customerNumber
+stap 6: duurste bovenaan krijgen door = order by average desc
+stap 7: limiteer tot 1 = limit 1
+
+
