@@ -18,5 +18,14 @@ fun main (){
         connectionProps
     )
 
+    // Create the statement
+    val statement = connection.prepareStatement("Select * FROM products Where productCode = ‘S24_3856'")
+    val result = statement.executeQuery()
+    println(result);
+    // Create the result
+    while(result.next()) {
+        result.getString("productCode")
+    }
+
 }
 
