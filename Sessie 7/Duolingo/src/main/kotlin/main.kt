@@ -1,0 +1,4 @@
+fun main() {
+    Duolingo().play()
+}
+
