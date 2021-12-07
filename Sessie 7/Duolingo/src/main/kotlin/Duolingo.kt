@@ -1,5 +1,6 @@
-class Duolingo() {
-    val words = mutableSetOf<Word>(
+class Duolingo(val roundsize: Int = 3, val language: String = "French") {
+
+    var words = mutableSetOf<Word>(
         Word( "vache","koe", "French" ),
         Word( "chat","kat", "French" ),
         Word( "arbre","boom", "French" ),
@@ -12,12 +13,16 @@ class Duolingo() {
         Word( "finger","vinger", "Engels" ),
     )
 
+    init {
+       words = words.filter { it.language == language }.toMutableSet()
+    }
+
    fun play(){
-       val selectedWords = words.shuffled().take(5).toMutableSet() //transform in iteeger
+       val selectedWords = words.shuffled().take(roundsize).toMutableSet() //transform in integer
        //zolang er meer dan 0 words zijn gaan we door, loop
        while (selectedWords.count() >0){
            val selectedWord = selectedWords.random()
-           //dit is een ckasse word en we willen de original zien
+           //dit is een classe word en we willen de original zien
            println(selectedWord.original)
            val userAnswer = readLine()
            if (userAnswer == selectedWord.translated){
@@ -30,5 +35,32 @@ class Duolingo() {
            //weergeven hoeveel woorden er blijven, woorden tellen
            println(selectedWords.count())
        }
-   }
-}
+   }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
